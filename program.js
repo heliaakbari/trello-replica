@@ -71,5 +71,10 @@ function addATask() {
   document.querySelector(`#${list}`).innerHTML =
     newTask + document.querySelector(`#${list}`).innerHTML;
   changeColor(document.querySelector(`#${list}`).children[0].children[1]);
-  document.querySelector(`#${list}`).children[0].children[1].addEventListener("change",changeColorTarget);
+  for (let i = 0; i < document.querySelector(`#${list}`).childElementCount; i++) {
+    document
+      .querySelector(`#${list}`)
+      .children[i].children[1].addEventListener("change", changeColorTarget);
+  }
+  
 }
