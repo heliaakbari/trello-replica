@@ -20,29 +20,31 @@
     <div class="container-fluid" style="max-width: 1000px;">
         <div class="row">
             <div class="col-12">
-            <div class="card w-100 pe-0 ps-0 addTask" style="width: 18rem;">
-                <div class="card-header">
-                    Add a task
+                <div class="card w-100 pe-0 ps-0 addTask" style="width: 18rem;">
+                    <div class="card-header">
+                        Add a task
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <input type="text" autofocus class="form-control d-inline me-1"
+                                placeholder="what's the task boss?" aria-label="new task"
+                                aria-describedby="addon-wrapping">
+                            <select id="newTaskPriority" class="form-select form-select-sm me-1 d-inline"
+                                style="max-width: fit-content;" aria-label=".form-select-sm example">
+                                <option value="High">High</option>
+                                <option value="Normal" selected>Normal</option>
+                                <option value="Low">Low</option>
+                            </select>
+                            <select id="newTaskStatus" class="form-select form-select-sm d-inline"
+                                style="max-width: fit-content;" aria-label=".form-select-sm example">
+                                <option value="todo" selected>to do</option>
+                                <option value="doing">doing</option>
+                                <option value="done">done</option>
+                            </select>
+                            <button class="btn ms-1 d-inline" id="addButton">add</button>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <input type="text" autofocus class="form-control d-inline me-1" placeholder="what's the task boss?" aria-label="new task"
-                            aria-describedby="addon-wrapping">
-                        <select id="newTaskPriority" class="form-select form-select-sm me-1 d-inline" style="max-width: fit-content;"
-                            aria-label=".form-select-sm example">
-                            <option value="High">High</option>
-                            <option value="Normal" selected>Normal</option>
-                            <option value="Low">Low</option>
-                        </select>
-                        <select id="newTaskStatus" class="form-select form-select-sm d-inline" style="max-width: fit-content;" aria-label=".form-select-sm example">
-                            <option value="todo" selected>to do</option>
-                            <option value="doing">doing</option>
-                            <option value="done" >done</option>
-                        </select>
-                        <button class="btn ms-1 d-inline" id="addButton">add</button>
-                    </li>
-                </ul>
-            </div>
             </div>
         </div>
         <div class="row">
@@ -52,7 +54,7 @@
                         To Do
                     </div>
                     <ul class="list-group list-group-flush" id="todos">
-                       
+
                     </ul>
                 </div>
             </div>
@@ -62,7 +64,7 @@
                         Doing
                     </div>
                     <ul class="list-group list-group-flush" id="doings">
-                        
+
                     </ul>
                 </div>
             </div>
@@ -72,7 +74,6 @@
                         Done
                     </div>
                     <ul class="list-group list-group-flush" id="dones">
-                        
                     </ul>
                 </div>
             </div>

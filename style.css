@@ -1,5 +1,5 @@
 body{
-    margin-top: 20px;
+    margin-top: 20px;d
 }
 .container{
     margin: 0 auto;
@@ -17,16 +17,22 @@ body{
     background-color: RGB(200, 244, 223);
 }
 
+.addTask button{
+    float: right;
+}
+
 .form-select{
     padding-left: 3px;
     padding-right: 30px;
     font-size: 12px;
+    display: inline;
 }
 .form-control{
     padding-left:3px;
     padding-right: 3px;
     font-size: 15px;
 }
+
 .btn{
     font-size: 15px;
     padding: 1px 10px;
@@ -36,4 +42,30 @@ body{
     li{
         display: flex !important;
     }
+}
+
+@media (max-width : 768px){
+    .form-select{
+        margin-top: 5px;
+    }
+    #addButton{
+        margin-top: 7px ;
+    }
+    .btn.delete{
+        padding:0;
+        margin: 0;
+        margin-top: 10px;
+    }
+}
+.delete{
+    padding: 5px 0 5px 5px;
+    border-radius: 5px;
+    margin: 0;
+    display: inline;
+    float: right;
+    border: 0;
+}
+
+.delete:hover{
+    font-weight: 900;
 }

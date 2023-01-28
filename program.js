@@ -78,7 +78,11 @@ function addATask() {
   selectElement.appendChild(HighOption);
   selectElement.appendChild(NormalOption);
   selectElement.appendChild(LowOption);
-
+  let button = document.createElement("button");
+  button.innerHTML = "X";
+  button.setAttribute("class", "btn delete");
+  li.appendChild(button);
+  button.addEventListener("click", deleteTask);
   document.getElementById(`${list}`).appendChild(li);
   changeColor(document.getElementById(list).lastElementChild.children[1]);
   for (
@@ -120,4 +124,10 @@ function sort(element, list) {
       }
     }
   }
+}
+
+function deleteTask(event) {
+  task = event.target.parentElement;
+  list = task.parentElement;
+  list.removeChild(task);
 }
