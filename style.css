@@ -1,0 +1,39 @@
+body{
+    margin-top: 20px;
+}
+.container{
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+}
+.card{
+    margin-bottom: 20px;
+}
+
+.addTask li{
+    background-color: RGB(82, 168, 120);
+}
+.addTask input, .addTask select, .addTask button{
+    background-color: RGB(200, 244, 223);
+}
+
+.form-select{
+    padding-left: 3px;
+    padding-right: 30px;
+    font-size: 12px;
+}
+.form-control{
+    padding-left:3px;
+    padding-right: 3px;
+    font-size: 15px;
+}
+.btn{
+    font-size: 15px;
+    padding: 1px 10px;
+    border-radius: 4px;
+}
+@media (min-width: 768px) {
+    li{
+        display: flex !important;
+    }
+}
