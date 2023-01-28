@@ -1,6 +1,4 @@
-let dropdowns = document.querySelectorAll(".task .form-select");
-dropdowns.forEach(changeColorOnChangePriority);
-dropdowns.forEach(changeColor);
+let globalDragged;
 
 function changeColorOnChangePriority(dropdown) {
   dropdown.addEventListener("change", changeColorTarget);
@@ -50,6 +48,8 @@ function addATask() {
 
   let li = document.createElement("li");
   li.setAttribute("class", "list-group-item task");
+  li.setAttribute("draggable", true);
+  li.addEventListener("dragstart", onDragStart);
   let input = document.createElement("input");
   input.setAttribute("type", "text");
   input.setAttribute("class", "form-control d-inline me-1");
@@ -130,4 +130,39 @@ function deleteTask(event) {
   task = event.target.parentElement;
   list = task.parentElement;
   list.removeChild(task);
+}
+
+function onDragStart(event) {
+  globalDragged = event.target;
+}
+
+function onDropToDo(event) {
+  event.preventDefault();
+  let list = document.getElementById("todos");
+  globalDragged.parentElement.removeChild(globalDragged);
+  list.appendChild(globalDragged);
+  console.log(list.childElementCount);
+  sort(globalDragged,list);
+}
+
+function onDropDoing(event) {
+  event.preventDefault();
+  globalDragged.parentElement.removeChild(globalDragged);
+  let list = document.getElementById("doings");
+  list.appendChild(globalDragged);
+  console.log(list.childElementCount);
+  sort(globalDragged, list);
+}
+
+function onDropDone(event) {
+  event.preventDefault();
+  globalDragged.parentElement.removeChild(globalDragged);
+  let list = document.getElementById("dones");
+  console.log(list.childElementCount);
+  list.appendChild(globalDragged);
+  sort(globalDragged, list);
+}
+function dragover_handler(ev) {
+  ev.preventDefault();
+  ev.dataTransfer.dropEffect = "move";
 }
