@@ -48,31 +48,42 @@ function addATask() {
     list = "dones";
   }
 
-  let dropdownCode;
-  if (TaskPriority === "Low") {
-    dropdownCode = `            <option value="High">High</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Low" selected>Low</option>`;
-  } else if (TaskPriority === "Normal") {
-    dropdownCode = `            <option value="High">High</option>
-                                <option value="Normal" selected>Normal</option>
-                                <option value="Low">Low</option>`;
-  } else {
-    dropdownCode = `            <option value="High" selected>High</option>
-                                <option value="Normal">Normal</option>
-                               <option value="Low">Low</option>`;
+  let li = document.createElement("li");
+  li.setAttribute("class", "list-group-item task");
+  let input = document.createElement("input");
+  input.setAttribute("type","text");
+  input.setAttribute("class", "form-control d-inline me-1");
+  input.setAttribute("value",`${TaskName}`);
+  let selectElement = document.createElement("select");
+  selectElement.setAttribute("style", "max-width: fit-content;");
+  selectElement.setAttribute("class", "form-select form-select-sm");
+  let NormalOption = document.createElement("option");
+  let LowOption = document.createElement("option");
+  let HighOption = document.createElement("option");
+  NormalOption.setAttribute("value","Normal");
+  LowOption.setAttribute("value","Low");
+  HighOption.setAttribute("value","High");
+  NormalOption.innerHTML="Normal";
+  HighOption.innerHTML = "High";
+  LowOption.innerHTML = "Low";
+  if(TaskPriority == "High"){
+    HighOption.setAttribute("selected",true);
   }
-  let newTask = `<li class="list-group-item task">
-                            <input type="text" class="form-control d-inline me-1" value="${TaskName}"
-                                aria-label="task" aria-describedby="addon-wrapping">
-                            <select class="form-select form-select-sm" style="max-width: fit-content;"
-                                aria-label=".form-select-sm example">
-                                ${dropdownCode}
-                            </select>
-                        </li>`;
-  document.querySelector(`#${list}`).innerHTML =
-    newTask + document.querySelector(`#${list}`).innerHTML;
-  changeColor(document.querySelector(`#${list}`).children[0].children[1]);
+  else if(TaskPriority == "Low"){
+    LowOption.setAttribute("selected",true);
+  }
+  else {
+    NormalOption.setAttribute("selected",true);
+  }
+  li.appendChild(input);
+  li.appendChild(selectElement);
+  selectElement.appendChild(HighOption);
+  selectElement.appendChild(NormalOption);
+  selectElement.appendChild(LowOption);
+
+  
+  document.getElementById(`${list}`).appendChild(li);
+  changeColor(document.getElementById(list).lastElementChild.children[1]);
   for (let i = 0; i < document.querySelector(`#${list}`).childElementCount; i++) {
     document
       .querySelector(`#${list}`)
