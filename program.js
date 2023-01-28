@@ -27,6 +27,8 @@ function changeColor(target) {
     target.style.backgroundColor = "#cde6ff ";
     target.parentElement.children[0].style.backgroundColor = "#cde6ff";
   }
+
+  sort(target.parentElement,target.parentElement.parentElement);
 }
 
 let addButton = document.querySelector("#addButton");
@@ -56,7 +58,7 @@ function addATask() {
                                 <option value="Normal" selected>Normal</option>
                                 <option value="Low">Low</option>`;
   } else {
-    dropdownCode = `             <option value="High" selected>High</option>
+    dropdownCode = `            <option value="High" selected>High</option>
                                 <option value="Normal">Normal</option>
                                <option value="Low">Low</option>`;
   }
@@ -77,4 +79,21 @@ function addATask() {
       .children[i].children[1].addEventListener("change", changeColorTarget);
   }
   
+  sort(
+    document.getElementById(`${list}`).children[0],
+    document.getElementById(`${list}`)
+  );
+}
+
+function sort(element, list) {
+  if (list.childElementCount > 1) {
+    if (element.children[1].value == "High") {
+      list.removeChild(element);
+      list.insertBefore(element,list.firstElementChild);
+    } else if (element.children[1].value == "Low") {
+      list.removeChild(element);
+      list.appendChild(element);
+    } else {
+    }
+  }
 }
