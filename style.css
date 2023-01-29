@@ -11,10 +11,10 @@ body{
 }
 
 .addTask li{
-    background-color: RGB(82, 168, 120);
+    background-color: #c4ba98;
 }
 .addTask input, .addTask select, .addTask button{
-    background-color: RGB(200, 244, 223);
+    background-color: #f7f4e6
 }
 
 .addTask button{
@@ -82,6 +82,6 @@ body{
     font-weight: 700;
     opacity: 1;
     background-size: 4px 4px;
-    background-image: repeating-linear-gradient(45deg, #644b1d 0, #30240d 0.4px, #d6cfb0 0, #f7f4e6 50%);
+    background-image: repeating-linear-gradient(45deg, #644b1d 0, #857048 0.4px, #cfc9ae 0, #f7f4e6 50%);
     color: #30240d;
 }
