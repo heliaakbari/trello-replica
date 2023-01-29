@@ -141,7 +141,6 @@ function onDropToDo(event) {
   let list = document.getElementById("todos");
   globalDragged.parentElement.removeChild(globalDragged);
   list.appendChild(globalDragged);
-  console.log(list.childElementCount);
   sort(globalDragged,list);
 }
 
@@ -150,7 +149,6 @@ function onDropDoing(event) {
   globalDragged.parentElement.removeChild(globalDragged);
   let list = document.getElementById("doings");
   list.appendChild(globalDragged);
-  console.log(list.childElementCount);
   sort(globalDragged, list);
 }
 
@@ -158,7 +156,6 @@ function onDropDone(event) {
   event.preventDefault();
   globalDragged.parentElement.removeChild(globalDragged);
   let list = document.getElementById("dones");
-  console.log(list.childElementCount);
   list.appendChild(globalDragged);
   sort(globalDragged, list);
 }

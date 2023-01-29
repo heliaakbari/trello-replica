@@ -42,6 +42,10 @@ body{
     li{
         display: flex !important;
     }
+
+    .col-md-4 {
+     padding-bottom: 150px;
+    }
 }
 
 @media (max-width : 768px){
@@ -68,4 +72,16 @@ body{
 
 .delete:hover{
     font-weight: 900;
+}
+
+body{
+    background-color: #f7f4e6;
+}
+
+.card-header{
+    font-weight: 700;
+    opacity: 1;
+    background-size: 4px 4px;
+    background-image: repeating-linear-gradient(45deg, #644b1d 0, #30240d 0.4px, #d6cfb0 0, #f7f4e6 50%);
+    color: #30240d;
 }
