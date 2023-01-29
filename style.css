@@ -85,3 +85,15 @@ body{
     background-image: repeating-linear-gradient(45deg, #644b1d 0, #857048 0.4px, #cfc9ae 0, #f7f4e6 50%);
     color: #30240d;
 }
+
+#signature{
+    position: fixed;
+    bottom: 3px;
+    left: 3px;
+    font-size: 15px;
+    color: #30240d;
+}
+
+#signature a{
+    color: #30240d;
+}
